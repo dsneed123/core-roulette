@@ -9,4 +9,9 @@ const nextConfig = {
   output: 'export',
 };
 
-export default nextConfig;
+// next.config.js or next.config.mjs
+export default {
+  output: 'export',
+  // Add any other configurations you need
+};
+
