@@ -89,7 +89,7 @@ const Workout = () => {
                 className="w-full h-auto max-w-xs mx-auto"
                 onError={(e) => {
                   e.target.onerror = null; 
-                  e.target.src = '/media/beginner/Alternating-Heel-Touches.gif'; // Ensure this path is valid
+                  e.target.src = 'public/media/beginner/Alternating-Heel-Touches.gif'; // Ensure this path is valid
                 }}
               />
               <p className="text-white mt-2 text-sm">{image.name}</p>
