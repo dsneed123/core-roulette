@@ -1,8 +1,8 @@
 "use client"; // Marking this as a Client Component
-
-
-import React, { useEffect, useState } from 'react';
+  
+  import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image'; // Import the Image component from Next.js
 import '../app/globals.css';
 import Back from '../components/back';
 
@@ -42,81 +42,74 @@ const Workout = () => {
     { src: '/media/advanced/Weighted-Seated-Tuck-Crunch.gif', name: 'Weighted Seated Tuck Crunch', instruction: 'Sit with weights and bring your knees to your chest while crunching.' },
     { src: '/media/advanced/Wheel-Rollout.gif', name: 'Wheel Rollout', instruction: 'Use a wheel to roll forward while keeping your body straight and engaging your core.' },
   ];
-  
-    // Function to filter GIFs based on level
-    const getImagesByLevel = (level) => {
-      if (!level) return [];
-      return allGifs.filter(gif => gif.src.split('/')[2] === level.toLowerCase());
-    };
-  
-    const getRandomImages = (filteredImages) => {
-      const count = level === 'Advanced' ? 3 : 2; // Set number of images based on level
-      const shuffledGifs = filteredImages.sort(() => 0.5 - Math.random());
-      return shuffledGifs.slice(0, Math.min(count, shuffledGifs.length)); // Ensure we don't exceed available images
-    };
-  
-    const handleReRoll = () => {
-      if (images.length === 0) return;
-      setLoading(true);
-      const selectedImages = getRandomImages(images);
-      setImages(selectedImages);
-      setLoading(false);
-    };
-  
-    useEffect(() => {
-      if (level) {
-        const filteredImages = getImagesByLevel(level);
-        setImages(getRandomImages(filteredImages)); // Set random images on load
-      }
-    }, [level]);
-  
-    return (
-      
-      <div className="flex flex-col items-center justify-center bg-[#1A202C] min-h-screen p-4">
-       <Back/>
-       <div className="flex items-center mb-8">
-       
-      </div>
-        
-        <div className="flex flex-col justify-center bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
-       
-          <h1 className="text-2xl text-white mb-4">Rules</h1>
-          <p className="text-white mb-2">• Complete 2-3 rounds</p>
-          <p className="text-white mb-2">• Rest 45 seconds between rounds</p>
-          <p className="text-white">• Progressively overload and add weight each week</p>
-        </div>
-  
-        <div className="grid grid-cols-1 gap-4">
-          {images.length > 0 ? (
-            images.map((image, index) => (
-              <div key={index} className="bg-gray-800 rounded-lg shadow-lg text-center p-4 flex flex-col">
-                <img
-                  src={image.src}
-                  alt={`Workout GIF ${index + 1}`}
-                  className="w-full h-auto max-w-xs mx-auto"
-                  onError={(e) => {
-                    e.target.onerror = null; 
-                    e.target.src = '/path/to/default/image.gif';
-                    console.log(img.src)
-                  }}
-                />
-                <p className="text-white mt-2 text-sm">{image.name}</p>
-                <p className="text-white mt-1 text-xs break-words">{image.instruction}</p>
-              </div>
-            ))
-          ) : (
-            <p className="text-white">No GIFs available for this level.</p>
-          )}
-        </div>
-        <button 
-          onClick={handleReRoll} 
-          className={`mt-4 bg-blue-500 text-white py-2 px-4 rounded ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-          disabled={loading} // Disable button while loading
-        >
-          {loading ? 'Loading...' : 'Re-Roll'}
-        </button>
-      </div>
-    );
+
+  const getImagesByLevel = (level) => {
+    if (!level) return [];
+    return allGifs.filter(gif => gif.src.split('/')[2] === level.toLowerCase());
   };
-  
-  export default Workout;
+
+  const getRandomImages = (filteredImages) => {
+    const count = level === 'Advanced' ? 3 : 2;
+    const shuffledGifs = filteredImages.sort(() => 0.5 - Math.random());
+    return shuffledGifs.slice(0, Math.min(count, shuffledGifs.length));
+  };
+
+  const handleReRoll = () => {
+    if (images.length === 0) return;
+    setLoading(true);
+    const selectedImages = getRandomImages(images);
+    setImages(selectedImages);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    if (level) {
+      const filteredImages = getImagesByLevel(level);
+      setImages(getRandomImages(filteredImages));
+    }
+  }, [level]);
+
+  return (
+    <div className="flex flex-col items-center justify-center bg-[#1A202C] min-h-screen p-4">
+      <Back />
+      <div className="flex flex-col justify-center bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+        <h1 className="text-2xl text-white mb-4">Rules</h1>
+        <p className="text-white mb-2">• Complete 2-3 rounds</p>
+        <p className="text-white mb-2">• Rest 45 seconds between rounds</p>
+        <p className="text-white">• Progressively overload and add weight each week</p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4">
+        {images.length > 0 ? (
+          images.map((image, index) => (
+            <div key={index} className="bg-gray-800 rounded-lg shadow-lg text-center p-4 flex flex-col">
+              <img
+                src={image.src}
+                alt={`Workout GIF ${index + 1}`}
+                className="w-full h-auto max-w-xs mx-auto"
+                onError={(e) => {
+                  e.target.onerror = null; 
+                  e.target.src = '/path/to/default/image.gif'; // Ensure this path is valid
+                }}
+              />
+              <p className="text-white mt-2 text-sm">{image.name}</p>
+              <p className="text-white mt-1 text-xs break-words">{image.instruction}</p>
+            </div>
+          
+          ))
+        ) : (
+          <p className="text-white">No GIFs available for this level.</p>
+        )}
+      </div>
+      <button 
+        onClick={handleReRoll} 
+        className={`mt-4 bg-blue-500 text-white py-2 px-4 rounded ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+        disabled={loading}
+      >
+        {loading ? 'Loading...' : 'Re-Roll'}
+      </button>
+    </div>
+  );
+};
+
+export default Workout;

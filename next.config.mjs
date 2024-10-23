@@ -7,6 +7,7 @@ const nextConfig = {
   basePath: isGithubActions ? '/core-roulette' : '',
   trailingSlash: true,
   output: 'export',
+  
 };
 
 // next.config.js or next.config.mjs
