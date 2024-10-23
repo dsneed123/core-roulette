@@ -9,7 +9,7 @@ import Back from '../components/back';
 const Workout = () => {
   const router = useRouter();
   var { level } = router.query;
-  console.log('Current level:', level);
+  
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -70,7 +70,7 @@ const Workout = () => {
         setImages(getRandomImages(filteredImages)); // Set random images on load
       }
     }, [level]);
-  
+    console.log(images);
     return (
       
       <div className="flex flex-col items-center justify-center bg-[#1A202C] min-h-screen p-4">
