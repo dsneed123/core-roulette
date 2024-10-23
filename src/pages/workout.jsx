@@ -2,7 +2,7 @@
   
   import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image'; // Import the Image component from Next.js
+
 import '../app/globals.css';
 import Back from '../components/back';
 
