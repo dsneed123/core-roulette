@@ -9,6 +9,14 @@ import Back from '../components/back';
 const Workout = () => {
   const router = useRouter();
   var { level } = router.query;
+  useEffect(() => {
+    if (level) {
+      const filteredImages = getImagesByLevel(level);
+      setImages(getRandomImages(filteredImages)); // Set random images on load
+    } else {
+      setImages([]); // Clear images if no level is set
+    }
+  }, [level]);
   console.log(level);
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
