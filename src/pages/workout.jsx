@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import 'app/globals.css';
-import Back from 'components/back';
+import Back from '../components/back';
 
 const Workout = () => {
   const router = useRouter();
