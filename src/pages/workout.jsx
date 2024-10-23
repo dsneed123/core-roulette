@@ -69,12 +69,12 @@ const Workout = () => {
     
   
     const handleReRoll = () => {
-      if (images.length === 0) return;
       setLoading(true);
       const selectedImages = getRandomImages(images);
       setImages(selectedImages);
       setLoading(false);
     };
+    
   
     useEffect(() => {
       if (level) {
