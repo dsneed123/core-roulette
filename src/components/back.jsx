@@ -1,8 +1,8 @@
 "use client"; // Marking this as a Client Component
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Import useRouter from Next.js
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-const backButton = () => {
+const BackButton = () => {
     const router = useRouter();
     const returnHome = () => {
         router.push('/');
@@ -16,4 +16,4 @@ const backButton = () => {
     );
 };
 
-export default backButton;
+export default BackButton;
