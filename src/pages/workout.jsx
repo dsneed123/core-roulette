@@ -47,8 +47,10 @@ const Workout = () => {
     // Function to filter GIFs based on level
     const getImagesByLevel = (level) => {
       if (!level) return [];
-      return allGifs.filter(gif => gif.src.split('/')[2] === level.toLowerCase());
+      const normalizedLevel = level.trim().toLowerCase();
+      return allGifs.filter(gif => gif.src.split('/')[2] === normalizedLevel);
     };
+    
   
     const getRandomImages = (filteredImages) => {
       const count = level === 'Advanced' ? 3 : 2; // Set number of images based on level
