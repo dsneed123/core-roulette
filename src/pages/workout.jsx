@@ -61,10 +61,12 @@ const Workout = () => {
     
   
     const getRandomImages = (filteredImages) => {
-      const count = level === 'Advanced' ? 3 : 2; // Set number of images based on level
+      if (filteredImages.length === 0) return []; // Prevents errors if no images are found
+      const count = level === 'Advanced' ? 3 : 2;
       const shuffledGifs = filteredImages.sort(() => 0.5 - Math.random());
-      return shuffledGifs.slice(0, Math.min(count, shuffledGifs.length)); // Ensure we don't exceed available images
+      return shuffledGifs.slice(0, Math.min(count, shuffledGifs.length));
     };
+    
   
     const handleReRoll = () => {
       if (images.length === 0) return;
