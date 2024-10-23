@@ -13,8 +13,8 @@ const Workout = () => {
   const [loading, setLoading] = useState(false);
 
   const allGifs = [
-    { src: '/media/beginner/Alternating-Heel-Touches.gif', name: 'Alternating Heel Touches', instruction: 'Lie on your back, lift your feet, and touch your heels alternately.' },
-    { src: '/media/beginner/Alternating-Oblique-Crunches.gif', name: 'Alternating Oblique Crunches', instruction: 'Crunch towards your knee while extending the other leg.' },
+    { src: 'media/beginner/Alternating-Heel-Touches.gif', name: 'Alternating Heel Touches', instruction: 'Lie on your back, lift your feet, and touch your heels alternately.' },
+    { src: 'media/beginner/Alternating-Oblique-Crunches.gif', name: 'Alternating Oblique Crunches', instruction: 'Crunch towards your knee while extending the other leg.' },
     { src: '/media/beginner/Bicycle-Crunch.gif', name: 'Bicycle Crunch', instruction: 'Alternate touching your elbows to the opposite knees in a cycling motion.' },
     { src: '/media/beginner/Crunch.gif', name: 'Crunch', instruction: 'Lie on your back, knees bent, and lift your torso towards your knees.' },
     { src: '/media/beginner/Dead-Bug.gif', name: 'Dead Bug', instruction: 'Lie on your back with arms and legs up, lower opposite arm and leg.' },
@@ -89,7 +89,7 @@ const Workout = () => {
                 className="w-full h-auto max-w-xs mx-auto"
                 onError={(e) => {
                   e.target.onerror = null; 
-                  e.target.src = '/media/beginner/Alternating-Heel-Touches.gif'; // Ensure this path is valid
+                  e.target.src = 'media/beginner/Alternating-Heel-Touches.gif'; // Ensure this path is valid
                 }}
               />
               <p className="text-white mt-2 text-sm">{image.name}</p>
