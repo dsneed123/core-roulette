@@ -4,7 +4,7 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 const nextConfig = {
   reactStrictMode: true,
   assetPrefix: isGithubActions ? '/core-roulette/' : '',
-  basePath: isGithubActions ? '/core-roulette' : '',
+  basePath: isGithubActions ? '/core-roulette/' : '',
   trailingSlash: true,
   output: 'export',
   
