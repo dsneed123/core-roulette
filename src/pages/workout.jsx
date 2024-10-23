@@ -8,7 +8,8 @@ import Back from '../components/back';
 
 const Workout = () => {
   const router = useRouter();
-  const { level } = router.query;
+  var { level } = router.query;
+  level = level.toLowerCase();
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
 
