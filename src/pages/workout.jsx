@@ -13,34 +13,34 @@ const Workout = () => {
   const [loading, setLoading] = useState(false);
 
   const allGifs = [
-    { src: '/core-roulette/media/beginner/Alternating-Heel-Touches.gif', name: 'Alternating Heel Touches', instruction: 'Lie on your back, lift your feet, and touch your heels alternately.' },
-    { src: '/core-roulette/media/beginner/Alternating-Oblique-Crunches.gif', name: 'Alternating Oblique Crunches', instruction: 'Crunch towards your knee while extending the other leg.' },
-    { src: '/core-roulette/media/beginner/Bicycle-Crunch.gif', name: 'Bicycle Crunch', instruction: 'Alternate touching your elbows to the opposite knees in a cycling motion.' },
-    { src: '/core-roulette/media/beginner/Crunch.gif', name: 'Crunch', instruction: 'Lie on your back, knees bent, and lift your torso towards your knees.' },
-    { src: '/core-roulette/media/beginner/Dead-Bug.gif', name: 'Dead Bug', instruction: 'Lie on your back with arms and legs up, lower opposite arm and leg.' },
-    { src: '/core-roulette/media/beginner/Elbow-To-Knee-Situp.gif', name: 'Elbow to Knee Situp', instruction: 'Sit up and touch your elbow to the opposite knee.' },
-    { src: '/core-roulette/media/beginner/lying-leg-raise.gif', name: 'Lying Leg Raise', instruction: 'Lie flat and lift your legs up while keeping them straight.' },
-    { src: '/core-roulette/media/beginner/Oblique-Crunches.gif', name: 'Oblique Crunches', instruction: 'Lie on your back and lift your shoulders towards your knees to one side.' },
-    { src: '/core-roulette/media/beginner/Reverse-Crunch.gif', name: 'Reverse Crunch', instruction: 'Lift your hips off the ground while bringing your knees to your chest.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Band-Assisted-Wheel-Rollouts.gif', name: 'Band-Assisted Wheel Rollouts', instruction: 'Kneel and roll a wheel away from you while keeping your core tight.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Bicycle-Crunch.gif', name: 'Bicycle Crunch (Inter/core-roulette/mediate)', instruction: 'Perform a bicycle crunch, focusing on your core and controlling the movement.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Captains-Chair-Leg-Raises.gif', name: 'Captain’s Chair Leg Raises', instruction: 'Use a captain’s chair and lift your legs to engage your abs.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Decline-Weighted-Situp.gif', name: 'Decline Weighted Situp', instruction: 'Perform a situp on a decline bench with added weight for resistance.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Hanging-Flutter-Kicks.gif', name: 'Hanging Flutter Kicks', instruction: 'Hang from a bar and alternate kicking your legs up and down.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Hanging-Knee-Raises.gif', name: 'Hanging Knee Raises', instruction: 'Hang from a bar and bring your knees towards your chest.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/lying-leg-raise.gif', name: 'Lying Leg Raise (Inter/core-roulette/mediate)', instruction: 'Lie flat and raise your legs, keeping them straight to work your lower abs.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Russian-Twists.gif', name: 'Russian Twists', instruction: 'Sit on the floor, lean back slightly, and twist your torso side to side.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Weighted-Crunch.gif', name: 'Weighted Crunch', instruction: 'Perform a crunch while holding a weight plate for added resistance.' },
-    { src: '/core-roulette/media/Inter/core-roulette/mediate/Weighted-Knee-Raises-Captains-Chair.gif', name: 'Weighted Knee Raises (Captain’s Chair)', instruction: 'Use a captain’s chair and lift your knees while holding weights.' },
-    { src: '/core-roulette/media/advanced/Hanging-Flutter-Kicks.gif', name: 'Hanging Flutter Kicks (Advanced)', instruction: 'Perform flutter kicks while hanging from a bar for extra core engagement.' },
-    { src: '/core-roulette/media/advanced/Hanging-Half-Windmill.gif', name: 'Hanging Half Windmill', instruction: 'Hang from a bar and rotate your legs in a half-circle motion.' },
-    { src: '/core-roulette/media/advanced/Russian-Twists.gif', name: 'Russian Twists (Advanced)', instruction: 'With added weight, perform twists to engage the obliques deeply.' },
-    { src: '/core-roulette/media/advanced/Weighted-Crunch.gif', name: 'Weighted Crunch (Advanced)', instruction: 'Perform crunches with a heavier weight for increased resistance.' },
-    { src: '/core-roulette/media/advanced/Weighted-Decline-Situp.gif', name: 'Weighted Decline Situp', instruction: 'On a decline bench, perform situps with added weight for challenge.' },
-    { src: '/core-roulette/media/advanced/Weighted-Knee-Raises-Captains-Chair.gif', name: 'Weighted Knee Raises (Captain’s Chair Advanced)', instruction: 'Lift knees to chest while holding weights on a captain’s chair.' },
-    { src: '/core-roulette/media/advanced/Weighted-Knee-Raises-Hanging.gif', name: 'Weighted Knee Raises (Hanging)', instruction: 'Hang and lift knees towards your chest while holding weights.' },
-    { src: '/core-roulette/media/advanced/Weighted-Seated-Tuck-Crunch.gif', name: 'Weighted Seated Tuck Crunch', instruction: 'Sit with weights and bring your knees to your chest while crunching.' },
-    { src: '/core-roulette/media/advanced/Wheel-Rollout.gif', name: 'Wheel Rollout', instruction: 'Use a wheel to roll forward while keeping your body straight and engaging your core.' },
+    { src: './core-roulette/media/beginner/Alternating-Heel-Touches.gif', name: 'Alternating Heel Touches', instruction: 'Lie on your back, lift your feet, and touch your heels alternately.' },
+    { src: './core-roulette/media/beginner/Alternating-Oblique-Crunches.gif', name: 'Alternating Oblique Crunches', instruction: 'Crunch towards your knee while extending the other leg.' },
+    { src: './core-roulette/media/beginner/Bicycle-Crunch.gif', name: 'Bicycle Crunch', instruction: 'Alternate touching your elbows to the opposite knees in a cycling motion.' },
+    { src: './core-roulette/media/beginner/Crunch.gif', name: 'Crunch', instruction: 'Lie on your back, knees bent, and lift your torso towards your knees.' },
+    { src: './core-roulette/media/beginner/Dead-Bug.gif', name: 'Dead Bug', instruction: 'Lie on your back with arms and legs up, lower opposite arm and leg.' },
+    { src: './core-roulette/media/beginner/Elbow-To-Knee-Situp.gif', name: 'Elbow to Knee Situp', instruction: 'Sit up and touch your elbow to the opposite knee.' },
+    { src: './core-roulette/media/beginner/lying-leg-raise.gif', name: 'Lying Leg Raise', instruction: 'Lie flat and lift your legs up while keeping them straight.' },
+    { src: './core-roulette/media/beginner/Oblique-Crunches.gif', name: 'Oblique Crunches', instruction: 'Lie on your back and lift your shoulders towards your knees to one side.' },
+    { src: './core-roulette/media/beginner/Reverse-Crunch.gif', name: 'Reverse Crunch', instruction: 'Lift your hips off the ground while bringing your knees to your chest.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Band-Assisted-Wheel-Rollouts.gif', name: 'Band-Assisted Wheel Rollouts', instruction: 'Kneel and roll a wheel away from you while keeping your core tight.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Bicycle-Crunch.gif', name: 'Bicycle Crunch (Inter./core-roulette/mediate)', instruction: 'Perform a bicycle crunch, focusing on your core and controlling the movement.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Captains-Chair-Leg-Raises.gif', name: 'Captain’s Chair Leg Raises', instruction: 'Use a captain’s chair and lift your legs to engage your abs.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Decline-Weighted-Situp.gif', name: 'Decline Weighted Situp', instruction: 'Perform a situp on a decline bench with added weight for resistance.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Hanging-Flutter-Kicks.gif', name: 'Hanging Flutter Kicks', instruction: 'Hang from a bar and alternate kicking your legs up and down.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Hanging-Knee-Raises.gif', name: 'Hanging Knee Raises', instruction: 'Hang from a bar and bring your knees towards your chest.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/lying-leg-raise.gif', name: 'Lying Leg Raise (Inter./core-roulette/mediate)', instruction: 'Lie flat and raise your legs, keeping them straight to work your lower abs.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Russian-Twists.gif', name: 'Russian Twists', instruction: 'Sit on the floor, lean back slightly, and twist your torso side to side.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Weighted-Crunch.gif', name: 'Weighted Crunch', instruction: 'Perform a crunch while holding a weight plate for added resistance.' },
+    { src: './core-roulette/media/Inter./core-roulette/mediate/Weighted-Knee-Raises-Captains-Chair.gif', name: 'Weighted Knee Raises (Captain’s Chair)', instruction: 'Use a captain’s chair and lift your knees while holding weights.' },
+    { src: './core-roulette/media/advanced/Hanging-Flutter-Kicks.gif', name: 'Hanging Flutter Kicks (Advanced)', instruction: 'Perform flutter kicks while hanging from a bar for extra core engagement.' },
+    { src: './core-roulette/media/advanced/Hanging-Half-Windmill.gif', name: 'Hanging Half Windmill', instruction: 'Hang from a bar and rotate your legs in a half-circle motion.' },
+    { src: './core-roulette/media/advanced/Russian-Twists.gif', name: 'Russian Twists (Advanced)', instruction: 'With added weight, perform twists to engage the obliques deeply.' },
+    { src: './core-roulette/media/advanced/Weighted-Crunch.gif', name: 'Weighted Crunch (Advanced)', instruction: 'Perform crunches with a heavier weight for increased resistance.' },
+    { src: './core-roulette/media/advanced/Weighted-Decline-Situp.gif', name: 'Weighted Decline Situp', instruction: 'On a decline bench, perform situps with added weight for challenge.' },
+    { src: './core-roulette/media/advanced/Weighted-Knee-Raises-Captains-Chair.gif', name: 'Weighted Knee Raises (Captain’s Chair Advanced)', instruction: 'Lift knees to chest while holding weights on a captain’s chair.' },
+    { src: './core-roulette/media/advanced/Weighted-Knee-Raises-Hanging.gif', name: 'Weighted Knee Raises (Hanging)', instruction: 'Hang and lift knees towards your chest while holding weights.' },
+    { src: './core-roulette/media/advanced/Weighted-Seated-Tuck-Crunch.gif', name: 'Weighted Seated Tuck Crunch', instruction: 'Sit with weights and bring your knees to your chest while crunching.' },
+    { src: './core-roulette/media/advanced/Wheel-Rollout.gif', name: 'Wheel Rollout', instruction: 'Use a wheel to roll forward while keeping your body straight and engaging your core.' },
   ];
 
   const getImagesByLevel = (level) => {
@@ -89,7 +89,7 @@ const Workout = () => {
                 className="w-full h-auto max-w-xs mx-auto"
                 onError={(e) => {
                   e.target.onerror = null; 
-                  e.target.src = '/core-roulette/media/beginner/Alternating-Heel-Touches.gif'; // Ensure this path is valid
+                  e.target.src = './core-roulette/media/beginner/Alternating-Heel-Touches.gif'; // Ensure this path is valid
                 }}
               />
               <p className="text-white mt-2 text-sm">{image.name}</p>
